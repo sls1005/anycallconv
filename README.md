@@ -16,7 +16,7 @@ assert not compiles(
 In the above example, the macro is expanded into "`proc(x: int) {.cdecl.} or proc(x: int) {.closure.} or proc(x: int) {.nimcall.} or...`" in order to accept callbacks of different calling conventions. If the macro weren't applied, the first call to `invoke` wouldn't pass the compilation, because procedural types without pragmas have `{.closure.}` as the default calling convention, and thus not compatible with procedures other than those with `{.closure.}` or `{.nimcall.}`.
 
 ### Note
-* This actually produces a *type class*, which leads a procedure with such callback to be  **implicit generic**. That is, calling the procedure many times with callbacks of  *N* different calling conventions will cause it to instantiate *N* times.
+* This actually produces a *type class*, which leads a procedure with such callback to be  **implicit generic**. That is, calling the procedure many times with callbacks of  *N* different calling conventions will cause it to instantiate at least *N* times.
 
 * Using a *type class* for variable type will **not** make the variable to have multiple types, but instead cause the compiler to perform a check on it and resolve it into a single type, as stated in the language manual. The same applies to *type classes* created with this macro. For example,
     ```nim
