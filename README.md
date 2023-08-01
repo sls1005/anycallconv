@@ -1,4 +1,4 @@
-This module provides a `macro` which can be applied to procedural parameter types. Once applied, it makes the parameter to accept procedures of a particular signature, but regardless of the calling convention.
+This module provides a *macro pragma* which can be applied to procedural parameter types, named `anyconv`. Once applied, it makes the parameter to accept procedures of a particular signature, but regardless of the calling convention.
 
 ### Example
 ```nim
