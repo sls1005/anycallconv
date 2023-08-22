@@ -28,6 +28,5 @@ In the above example, the macro is expanded into "`proc(x: int) {.cdecl.} or pro
     echo f is proc(x: int): int {.nimcall.} # false
     echo f is proc(x: int): int {.closure.} # false
     echo f is proc(x: float): float {.cdecl.} # also false
-```
-
-
+  ```
+* A procedure taking such a callback should **not** be marked with `{.exportc.}`, or a fatal error is possible.
